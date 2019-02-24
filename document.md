@@ -98,7 +98,7 @@ Create Table: CREATE TABLE `user_transition_detail` (
  */
 
 
-//用户余额表
+//用户信息表
 type UserInfo struct {
 	gorm.Model
 	//添加索引，高频查询
@@ -124,14 +124,6 @@ type UserTransitionDetail struct {
 }
 
 
-//用户转账明细表
-type UserTransitionDetail1 struct {
-	gorm.Model
-	//添加索引，高频查询
-	FromUserId int	 `gorm:"index:from_user"`
-	ToUserId int
-	Value float64
-}
 
 //根据用户获取余额
 func GetUserInfoByUserId(userId int) (uint, error) {
